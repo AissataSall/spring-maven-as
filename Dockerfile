@@ -1,5 +1,6 @@
 FROM eclipse-temurin:17-jdk-jammy
+# Définir le répertoire de travail dans le conteneur
 WORKDIR /app
-COPY target/dockerdemo-0.0.1-SNAPSHOT.jar docker-demo.jar
+COPY target/*.jar app.jar
 EXPOSE 8080
-ENTRYPOINT ["java", "-jar", "/app/docker-demo.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]
